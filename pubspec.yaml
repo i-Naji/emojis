@@ -1,0 +1,11 @@
+name: emojis
+description: Emoji for Dart
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+
+dev_dependencies:
+  test: ^1.10.0
