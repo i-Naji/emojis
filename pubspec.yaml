@@ -1,8 +1,8 @@
 name: emojis
-description: Emoji for Dart
+description: Emojis for Dart! This package contain all unicode 13.0 emojis (2020)!
 version: 0.0.1
-author:
-homepage:
+author: Naji <teamnaji@gmail.com>
+homepage:  https://github.com/i-Naji/emojis
 
 environment:
   sdk: ">=2.0.0 <3.0.0"

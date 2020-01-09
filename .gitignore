@@ -4,5 +4,6 @@
 
 .packages
 .pub/
+.metadata
 emojis.iml
 pubspec.lock
