@@ -86,6 +86,7 @@ class Emoji {
 
   /// Returns Emoji by [name]
   factory Emoji.byName(String name){
+    name = name.toLowerCase(); // todo: searchable name
     return _emojis.firstWhere((Emoji emoji) => emoji.name == name);
   }
 
@@ -106,6 +107,7 @@ class Emoji {
 
   /// Returns List of Emojis with Specific [keyword]/
   static Iterable<Emoji> byKeyword(String keyword){
+    keyword = keyword.toLowerCase();
     return _emojis.where((Emoji emoji) => emoji.keywords.contains(keyword));
   }
 
@@ -174,7 +176,7 @@ class Emoji {
 
   // todo: support unspecified gender for "... holding hands", "kiss", "couple with heart" and "family".
   /// stabilize [skinTone] and [gender] of [emoji], if `true`.
-  static String stabilize(String emoji, {bool skinTone : true,bool gender: false}){
+  static String stabilize(String emoji, {bool skin : true,bool gender: false}){
 
     if (gender){
       emoji = emoji.replaceAll('\u{200D}\u{2642}\u{FE0F}', '') // remove ZWJ man from emoji
@@ -187,7 +189,7 @@ class Emoji {
 
     final List<int> emojiRunes = emoji.runes.toList();
 
-    if (skinTone){
+    if (skin){
       emojiRunes.removeWhere((codeChar) => _isFitzpatrickCode(codeChar));
     }
     return String.fromCharCodes(emojiRunes);
@@ -207,5 +209,7 @@ class Emoji {
   static bool _isFitzpatrickCode(int emojiCode){
     return _skinToneCharCodes.contains(emojiCode);
   }
+  @override
+  toString() => char;
 }
 

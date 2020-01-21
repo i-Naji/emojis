@@ -1,7 +1,7 @@
-## []
-* remove generator
-* last stable version unicode  12.1
-* add library `emoji` and remove alias.
+## [0.8.0]
+* Remove generator
+* Use last stable version unicode  12.1
+* Add library `emoji` and remove alias.
 
 ## [0.0.1]
 
