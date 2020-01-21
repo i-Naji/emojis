@@ -23,7 +23,7 @@ main() {
 
   print(Emoji.disassemble(Emojis.mechanic)); // ['🔧', '🧑']
 
-  print(Emoji.assemble([Emojis.person, Emojis.laptop])); // 🧑‍💻
+  print(Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy])); // 👨‍👨‍👧‍👦️
 
   print(Emoji.modify('👍', fitzpatrick.light)); // 👍🏻
 

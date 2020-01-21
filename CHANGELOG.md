@@ -1,3 +1,5 @@
+## [0.8.1]
+* Improve example 
 ## [0.8.0]
 * Remove generator
 * Use last stable version unicode  12.1
