@@ -87,7 +87,7 @@ class Emoji {
   /// Returns Emoji by [name]
   factory Emoji.byName(String name){
     name = name.toLowerCase(); // todo: searchable name
-    return _emojis.firstWhere((Emoji emoji) => emoji.name == name);
+    return _emojis.firstWhere((Emoji emoji) => emoji.name == name, orElse: () => null);
   }
 
   /// Returns Emoji by [name] as short name.
