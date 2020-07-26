@@ -72,11 +72,11 @@ class Emoji {
   }
 
   /// Get all Emojis
-  static List<Emoji> all() => _emojis;
+  static List<Emoji> all() => List.unmodifiable(_emojis);
 
   /// Returns Emoji by [char] and character
   factory Emoji.byChar(String char){
-    return Emoji.all().firstWhere((Emoji emoji) => emoji.char == char);
+    return _emojis.firstWhere((Emoji emoji) => emoji.char == char, orElse: () => null);
   }
 
   /// Returns Emoji by [name]
@@ -87,7 +87,7 @@ class Emoji {
 
   /// Returns Emoji by [name] as short name.
   factory Emoji.byShortName(String name){
-    return _emojis.firstWhere((Emoji emoji) => emoji.char == name);
+    return _emojis.firstWhere((Emoji emoji) => emoji.char == name, orElse: () => null);
   }
 
   /// Returns list of Emojis in a same [group]
@@ -100,7 +100,7 @@ class Emoji {
     return _emojis.where((Emoji emoji) => emoji.emojiSubgroup == subgroup);
   }
 
-  /// Returns List of Emojis with Specific [keyword]/
+  /// Returns List of Emojis with Specific [keyword]
   static Iterable<Emoji> byKeyword(String keyword){
     keyword = keyword.toLowerCase();
     return _emojis.where((Emoji emoji) => emoji.keywords.contains(keyword));
