@@ -14,28 +14,35 @@ main() {
   print(smile.emojiSubgroup);
 // EmojiSubgroup.faceSmiling sub group of emoji
 
-  var womanBlond = Emoji.byChar(Emojis.womanBlondHair); // get a emoji by its character 👱‍♀️
+  Emoji womanBlond =
+      Emoji.byChar(Emojis.womanBlondHair); // get a emoji by its character 👱‍♀️
 
-  var blondyBlackLady = womanBlond.newSkin(fitzpatrick.dark); // get blondy in black
+  Emoji blondyBlackLady =
+      womanBlond.newSkin(fitzpatrick.dark); // get blondy in black
   print(blondyBlackLady); // 👱🏿‍♀️
 
-  var emList = Emoji.all(); // list of all Emojis
+  List<Emoji> emList = Emoji.all(); // list of all Emojis
 
   print(Emoji.disassemble(Emojis.mechanic)); // ['🔧', '🧑']
 
-  print(Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy])); // 👨‍👨‍👧‍👦️
+  print(Emoji.assemble(
+      [Emojis.man, Emojis.man, Emojis.girl, Emojis.boy])); // 👨‍👨‍👧‍👦️
 
   print(Emoji.modify('👍', fitzpatrick.light)); // 👍🏻
 
-  print(Emoji.stabilize(Emojis.womanPoliceOfficerMediumDarkSkinTone)); //👮🏾‍♀️ => 👮‍♀️ Woman Police Officer with no special skin tone
-  print(Emoji.stabilize(Emojis.womanPoliceOfficerMediumDarkSkinTone, skin: false, gender: true)); //👮🏾‍♀️ => 👮 no gender! still medium dark
+  print(Emoji.stabilize(Emojis
+      .womanPoliceOfficerMediumDarkSkinTone)); //👮🏾‍♀️ => 👮‍♀️ Woman Police Officer with no special skin tone
+  print(Emoji.stabilize(Emojis.womanPoliceOfficerMediumDarkSkinTone,
+      skin: false, gender: true)); //👮🏾‍♀️ => 👮🏾 no gender! still medium dark
 
   Emoji.byKeyword('love'); // returns list of lovely emojis :)
   // (🥰, 😍, 😘, 😚, 😙, 🤗, 😻, 😽, 💋, 💌, 💘, 💝, 💖, 💗, 💓, 💞, 💕, ..., 💄, ♾)
 
-  print(Emoji.byGroup(EmojiGroup.foodDrink)); // returns emojis in Food and Drink group
+  print(Emoji.byGroup(
+      EmojiGroup.foodDrink)); // returns emojis in Food and Drink group
   // (🍇, 🍈, 🍉, 🍊, 🍋, 🍌, 🍍, 🥭, 🍎, 🍏, 🍐, 🍑, 🍒, 🍓, 🥝, 🍅, 🥥, 🥑, ...)
 
-  print(Emoji.bySubgroup(EmojiSubgroup.money)); // returns emojis in Money subgroup
+  print(Emoji.bySubgroup(
+      EmojiSubgroup.money)); // returns emojis in Money subgroup
   // (💰, 💴, 💵, 💶, 💷, 💸, 💳, 🧾, 💹)
 }
