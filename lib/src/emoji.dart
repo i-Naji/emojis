@@ -38,24 +38,19 @@ class Emoji {
   final EmojiGroup emojiGroup;
   final EmojiSubgroup emojiSubgroup;
   final bool modifiable;
-  List<String> keywords;
+  final List<String> keywords;
   List<int> _runes;
 
   /// Emoji class.
   /// [name] of emoji. [char] and character of emoji. [shortName] and a digest name of emoji, [emojiGroup] is emoji's group and [emojiSubgroup] is emoji's subgroup. [keywords] list of keywords for emoji. [modifiable] `true` if emoji has skin.
-  Emoji({this.name, this.char, this.shortName, this.emojiGroup, this.emojiSubgroup, List<String> keywords, this.modifiable: false}){
-    this.keywords = keywords ?? [];
-  }
+  Emoji({this.name, this.char, this.shortName, this.emojiGroup, this.emojiSubgroup, this.keywords = const [], this.modifiable = false});
 
   /// Runes of Emoji Character
   get charRunes {
-    if (_runes == null){
-      _runes = char.runes.toList();
-    }
-    return _runes;
+    return _runes ??= char.runes.toList();
   }
-  
-  /// Returns current Emoji with New requested [skinTone] if modifable, else Returns current Emoji 
+
+  /// Returns current Emoji with New requested [skinTone] if modifiable, else Returns current Emoji
   Emoji newSkin(fitzpatrick skinTone){
     if (modifiable){
       switch(skinTone){
@@ -114,9 +109,9 @@ class Emoji {
   static bool isEmoji(emojiChar){
     return regex.hasMatch(emojiChar);
   }
-  
+
   /// disassemble [emoji] to list of emojis, without skin tones if [noSkin] be `true`.
-  static List<String> disassemble(String emoji, {bool noSkin: false}){
+  static List<String> disassemble(String emoji, {bool noSkin = false}){
     List<int> emojiRunes = emoji.runes.toList();
     emojiRunes.removeWhere((codeChar) => ZeroWidthCharCodes.contains(codeChar) || (noSkin && _isFitzpatrickCode(codeChar)));
     return emojiRunes.map((char) => String.fromCharCode(char)).toList();
@@ -137,7 +132,7 @@ class Emoji {
     codeCharPoints.add(variationSelector16);
     return String.fromCharCodes(codeCharPoints);
   }
-  
+
   /// Modify skin tone of [emoji] by requested [skinTone]
   static String modify(String emoji, fitzpatrick skinTone) {
     int skinToneCharCode;
@@ -176,7 +171,7 @@ class Emoji {
 
   // todo: support unspecified gender for "... holding hands", "kiss", "couple with heart" and "family".
   /// stabilize [skinTone] and [gender] of [emoji], if `true`.
-  static String stabilize(String emoji, {bool skin : true,bool gender: false}){
+  static String stabilize(String emoji, {bool skin = true,bool gender = false}){
 
     if (gender){
       emoji = emoji.replaceAll('\u{200D}\u{2642}\u{FE0F}', '') // remove ZWJ man from emoji
@@ -209,6 +204,7 @@ class Emoji {
   static bool _isFitzpatrickCode(int emojiCode){
     return _skinToneCharCodes.contains(emojiCode);
   }
+
   @override
   toString() => char;
 }
