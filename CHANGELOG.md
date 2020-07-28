@@ -1,3 +1,6 @@
+## [0.9.1]
+* fix shadowing
+
 ## [0.9.0]
 * Update to [Unicode **v.13**](https://unicode.org/emoji/charts-13.0)
 * Nullable factories 

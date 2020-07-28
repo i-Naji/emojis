@@ -74,17 +74,17 @@ class Emoji {
     if (modifiable){
       switch(skinTone){
         case fitzpatrick.light:
-          return Emoji(name: this.name + ', tone1', char: modify(this.char, skinTone), shortName: this.shortName + '_tone1',emojiGroup: this.emojiGroup, emojiSubgroup: this.emojiSubgroup, keywords: this.keywords, modifiable: true);
+          return Emoji(name: name + ', tone1', char: modify(char, skinTone), shortName: shortName + '_tone1',emojiGroup: emojiGroup, emojiSubgroup: emojiSubgroup, keywords: keywords, modifiable: true);
         case fitzpatrick.mediumLight:
-          return Emoji(name: this.name + ', tone2', char: modify(this.char, skinTone), shortName: this.shortName + '_tone2',emojiGroup: this.emojiGroup, emojiSubgroup: this.emojiSubgroup, keywords: this.keywords, modifiable: true);
+          return Emoji(name: name + ', tone2', char: modify(char, skinTone), shortName: shortName + '_tone2',emojiGroup: emojiGroup, emojiSubgroup: emojiSubgroup, keywords: keywords, modifiable: true);
         case fitzpatrick.medium:
-          return Emoji(name: this.name + ', tone3', char: modify(this.char, skinTone), shortName: this.shortName + '_tone3',emojiGroup: this.emojiGroup, emojiSubgroup: this.emojiSubgroup, keywords: this.keywords, modifiable: true);
+          return Emoji(name: name + ', tone3', char: modify(char, skinTone), shortName: shortName + '_tone3',emojiGroup: emojiGroup, emojiSubgroup: emojiSubgroup, keywords: keywords, modifiable: true);
         case fitzpatrick.mediumDark:
-          return Emoji(name: this.name + ', tone4', char: modify(this.char, skinTone), shortName: this.shortName + '_tone4',emojiGroup: this.emojiGroup, emojiSubgroup: this.emojiSubgroup, keywords: this.keywords, modifiable: true);
+          return Emoji(name: name + ', tone4', char: modify(char, skinTone), shortName: shortName + '_tone4',emojiGroup: emojiGroup, emojiSubgroup: emojiSubgroup, keywords: keywords, modifiable: true);
         case fitzpatrick.dark:
-          return Emoji(name: this.name + ', tone5', char: modify(this.char, skinTone), shortName: this.shortName + '_tone5',emojiGroup: this.emojiGroup, emojiSubgroup: this.emojiSubgroup, keywords: this.keywords, modifiable: true);
+          return Emoji(name: name + ', tone5', char: modify(char, skinTone), shortName: shortName + '_tone5',emojiGroup: emojiGroup, emojiSubgroup: emojiSubgroup, keywords: keywords, modifiable: true);
         case fitzpatrick.None:
-          return Emoji.byChar(stabilize(this.char));
+          return Emoji.byChar(stabilize(char));
       }
     }
     return this;
