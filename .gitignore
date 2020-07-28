@@ -7,3 +7,5 @@
 .metadata
 emojis.iml
 pubspec.lock
+
+generate/
