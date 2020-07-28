@@ -11,48 +11,75 @@ import 'package:emojis/emoji.dart'; // to use Emoji utilities
 ```
 1️⃣ Use
 ```dart
-var message = 'Made with ${Emojis.redHeart} by Naji.'; // message: Made with ❤️ by Naji.
+print('I ${Emojis.greenHeart} ${Emojis.directHit}'); // I 💚 🎯
 
 Emoji smile = Emoji.byName('Grinning Face'); // get a emoji by its name
-print(smile.name);
-// 'Grinning Face' name of emoji
-print(smile.char);
-// '😀' character of emoji
-print(smile.emojiGroup);
+print('Emoji name      : ${smile.name}');
+// Emoji name is Grinning Face
+print('Emoji character : ${smile.char}');
+// Emoji character '😀'
+print('Emoji category  : ${smile.emojiGroup}');
 // EmojiGroup.smileysEmotion group of emoji
-print(smile.emojiSubgroup);
+print('Emoji sub-group : ${smile.emojiSubgroup}');
 // EmojiSubgroup.faceSmiling sub group of emoji
 
-Emoji womanBlond = Emoji.byChar(Emojis.womanBlondHair); // get a emoji by its character 👱‍♀️
+// get an emoji by its character 👱‍♀️
+Emoji womanBlond = Emoji.byChar(Emojis.womanBlondHair); 
+print(womanBlond);
 
-Emoji blondyBlackLady = womanBlond.newSkin(fitzpatrick.dark); // get blondy in black
+// make blondy in black
+Emoji blondyBlackLady = womanBlond.newSkin(fitzpatrick.dark); 
 print(blondyBlackLady); // 👱🏿‍♀️
 
-List<Emoji> emList = Emoji.all; // list of all Emojis
+List<Emoji> emList = Emoji.all(); // list of all Emojis
 
-print(Emoji.disassemble(Emojis.mechanic)); // ['🔧', '🧑']
+// disassemble an emoji
+List<String> disassembled = Emoji.disassemble(Emojis.mechanic); 
+print(disassembled); // ['🔧', '🧑']
 
-print(Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy])); // 👨‍👨‍👧‍👦️
+// assemble some emojis
+String assembled = Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy]);
+print(assembled); // 👨‍👨‍👧‍👦️
 
-print(Emoji.modify('👍', fitzpatrick.light)); // 👍🏻
+String blackThumbsUp = '👍';
+// modify skin tone of emoji
+String witheThumbsUp = Emoji.modify(blackThumbsUp, fitzpatrick.light); 
+print(witheThumbsUp); // 👍🏻
 
-print(Emoji.stabilize(Emojis.womanPoliceOfficerMediumDarkSkinTone)); //👮🏾‍♀️ => 👮‍♀️ Woman Police Officer with no special skin tone
-print(Emoji.stabilize(Emojis.womanPoliceOfficerMediumDarkSkinTone, skin: false, gender: true)); //👮🏾‍♀️ => 👮🏾 no gender! still medium dark
+// A Woman Police Officer With Brown Skin
+String femaleCop =  Emojis.womanPoliceOfficerMediumDarkSkinTone;
+// Make that woman to just a Woman Police Officer with no special skin color
+String newFemaleCop = Emoji.stabilize(femaleCop);
+print('$femaleCop => $newFemaleCop'); //👮🏾‍♀️ => 👮‍♀️ 
 
-Emoji.byKeyword('love'); // returns list of lovely emojis :)
+// gender-neutral
+String aCop = Emoji.stabilize(femaleCop, skin: false, gender: true);
+print('$femaleCop => $aCop'); //👮🏾‍♀️=> 👮🏾 no gender! still medium dark
+
+final loveEmojis = Emoji.byKeyword('love'); // returns list of lovely emojis :)
+print(loveEmojis);
 // (🥰, 😍, 😘, 😚, 😙, 🤗, 😻, 😽, 💋, 💌, 💘, 💝, 💖, 💗, 💓, 💞, 💕, ..., 💄, ♾)
 
-print(Emoji.byGroup(EmojiGroup.foodDrink)); // returns emojis in Food and Drink group
+final foodCategory =  Emoji.byGroup(EmojiGroup.foodDrink); // returns emojis in Food and Drink group
+print(foodCategory);
 // (🍇, 🍈, 🍉, 🍊, 🍋, 🍌, 🍍, 🥭, 🍎, 🍏, 🍐, 🍑, 🍒, 🍓, 🥝, 🍅, 🥥, 🥑, ...)
 
-print(Emoji.bySubgroup(EmojiSubgroup.money)); // returns emojis in Money subgroup
+eIterable<Emoji> moneySubgroupEmojis = Emoji.bySubgroup(EmojiSubgroup.money); // returns emojis in Money subgroup
+print(moneySubgroupEmojis);
 // (💰, 💴, 💵, 💶, 💷, 💸, 💳, 🧾, 💹)
 ```
 
 ## 🚀 Features
-[ ] Emojize and Demojize text<br>
-[ ] Find emojis in text<br>
-[ ] Replace emojis in text<br>
+- [x] All Present unicode emojis 💯
+- [x] Get Emojis by Name, Category, Keyword & ...
+- [x] Modify Emoji with 🆕 skin color ( 🏻 🏼 🏽 🏾 🏿 )
+- [x] Stabilize Emoji (No Skin color, No Gender)
+- [X] Assemble Emojis (👩 + ❤ + 👩  = 👩‍❤️‍👩 )
+- [x] Disassemble Emojis (👨‍🔧 = 🔧 + 🧑)
+- [x] Emoji Regex Pattern
+- [ ] Emojize and Demojize text
+- [ ] Find emojis in text
+- [ ] Replace emojis in text
 
 ## 📄 License
 * [BDS 3 License](https://opensource.org/licenses/BSD-3-Clause)
