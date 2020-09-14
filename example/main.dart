@@ -22,8 +22,6 @@ main() {
   Emoji blondyBlackLady = womanBlond.newSkin(fitzpatrick.dark);
   print(blondyBlackLady); // 👱🏿‍♀️
 
-  List<Emoji> emList = Emoji.all(); // list of all Emojis
-
   // disassemble an emoji
   List<String> disassembled = Emoji.disassemble(Emojis.mechanic);
   print(disassembled); // ['🔧', '🧑']
@@ -58,4 +56,10 @@ main() {
   Iterable<Emoji> moneySubgroupEmojis = Emoji.bySubgroup(EmojiSubgroup.money); // returns emojis in Money subgroup
   print(moneySubgroupEmojis);
   // (💰, 💴, 💵, 💶, 💷, 💸, 💳, 🧾, 💹)
+
+  print(Emoji.emojinize('I :heart: :coffee:'));
+  // 'I ❤️ ☕'
+
+  print(Emoji.demojinize('I ❤️ ☕'));
+  // 'I :heart: :coffee:'
 }
