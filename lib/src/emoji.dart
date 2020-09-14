@@ -365,7 +365,7 @@ class Emoji {
   /// Returns Emoji by [name] as short name.
   factory Emoji.byShortName(String name) {
     return emojis.firstWhere(
-      (Emoji emoji) => emoji.char == name,
+      (Emoji emoji) => emoji.shortName == name,
       orElse: () => null,
     );
   }
