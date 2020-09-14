@@ -1,3 +1,5 @@
+import 'emoji_const.dart';
+import 'emoji_util.dart';
 import 'emojis.dart';
 
 /// All Groups
@@ -478,6 +480,49 @@ class Emoji {
       emojiRunes.removeWhere((codeChar) => _isFitzpatrickCode(codeChar));
     }
     return String.fromCharCodes(emojiRunes);
+  }
+
+  /// Emojify the input text.
+  /// For example: 'I :heart: :coffee:' => 'I ❤️ ☕'
+  static String emojify(String text) {
+    Iterable<Match> matches = EmojiConst.shortNameRegex.allMatches(text);
+    if (matches.isNotEmpty) {
+      String result = text;
+      matches.toList().forEach((m) {
+        final shortName = EmojiUtil.stripColons(m.group(0));
+        final emoji = Emoji.byShortName(shortName);
+        if (emoji != null) {
+          result = result.replaceAll(m.group(0), emoji.char);
+        }
+      });
+      return result;
+    }
+    return text;
+  }
+
+  /// This method will unemojify the text containing the Unicode emoji symbols
+  /// into emoji name.
+  /// For example: 'I ❤️ Flutter' => 'I :heart: Flutter'
+  static String unemojify(String text) {
+    Iterable<Match> matches = EmojiConst.emojiRegex.allMatches(text);
+    if (matches.isNotEmpty) {
+      String result = text;
+      matches.toList().forEach((m) {
+        final emoji = Emoji.byChar(m.group(0));
+        if (emoji != null) {
+          result = result.replaceAll(
+            m.group(0),
+            EmojiUtil.ensureColons(emoji.shortName),
+          );
+
+          /// Just a quick hack to clear graphical byte from emoji.
+          result = result.replaceAll(
+              EmojiConst.charNonSpacingMark, EmojiConst.charEmpty);
+        }
+      });
+      return result;
+    }
+    return text;
   }
 
   /// returns `true` if [emojiCode] is code of Emoji with skin!.
