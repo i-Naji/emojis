@@ -27,17 +27,17 @@ void main() {
     expect(emoji, isNull);
   });
 
-  group('Emoji.emojify', () {
-    test('returns emojified string', () {
-      final unemojifiedString = 'I :heart: :coffee:';
-      expect(Emoji.emojify(unemojifiedString), 'I ❤️ ☕');
+  group('Emoji.emojinize', () {
+    test('returns emojinized string', () {
+      final demojinizeString = 'I :heart: :coffee:';
+      expect(Emoji.emojinize(demojinizeString), 'I ❤️ ☕');
     });
   });
 
-  group('Emoji.unemojify', () {
-    test('returns unemojified string', () {
-      final emojifiedString = 'I ❤️ ☕';
-      expect(Emoji.unemojify(emojifiedString), 'I :heart: :coffee:');
+  group('Emoji.demojinize', () {
+    test('returns demojinize string', () {
+      final emojinizeString = 'I ❤️ ☕';
+      expect(Emoji.demojinize(emojinizeString), 'I :heart: :coffee:');
     });
   });
 }

@@ -482,9 +482,9 @@ class Emoji {
     return String.fromCharCodes(emojiRunes);
   }
 
-  /// Emojify the input text.
+  /// Emojinize the input text.
   /// For example: 'I :heart: :coffee:' => 'I ❤️ ☕'
-  static String emojify(String text) {
+  static String emojinize(String text) {
     Iterable<Match> matches = EmojiConst.shortNameRegex.allMatches(text);
     if (matches.isNotEmpty) {
       String result = text;
@@ -500,10 +500,10 @@ class Emoji {
     return text;
   }
 
-  /// This method will unemojify the text containing the Unicode emoji symbols
+  /// This method will demojinize the text containing the Unicode emoji symbols
   /// into emoji name.
   /// For example: 'I ❤️ Flutter' => 'I :heart: Flutter'
-  static String unemojify(String text) {
+  static String demojinize(String text) {
     Iterable<Match> matches = EmojiConst.emojiRegex.allMatches(text);
     if (matches.isNotEmpty) {
       String result = text;
@@ -517,7 +517,9 @@ class Emoji {
 
           /// Just a quick hack to clear graphical byte from emoji.
           result = result.replaceAll(
-              EmojiConst.charNonSpacingMark, EmojiConst.charEmpty);
+            EmojiConst.charNonSpacingMark,
+            EmojiConst.charEmpty,
+          );
         }
       });
       return result;
