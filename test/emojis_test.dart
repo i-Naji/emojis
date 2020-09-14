@@ -1,7 +1,7 @@
-import "package:test/test.dart";
-
 import 'package:emojis/emoji.dart';
 import 'package:emojis/emojis.dart';
+import 'package:emojis/src/emoji_const.dart';
+import "package:test/test.dart";
 
 void main() {
   test("Emojis.directHit is 🎯", () {
@@ -9,10 +9,14 @@ void main() {
     expect(Emojis.directHit, equals(result));
   });
 
-  test("Regex pattern matches all emojis", (){
-    for (var emoji in Emoji.all()){
+  test("Regex pattern matches all emojis", () {
+    for (var emoji in Emoji.all()) {
       if (emoji.name == 'transgender symbol') continue;
-      expect(emojiRegex.allMatches(emoji.char).length, 1, reason: 'Bad reg match for ${emoji.name}');
+      expect(
+        EmojiConst.emojiRegex.allMatches(emoji.char).length,
+        1,
+        reason: 'Bad reg match for ${emoji.name}',
+      );
     }
   });
 
@@ -22,5 +26,4 @@ void main() {
     final emoji = Emoji.byName('bla');
     expect(emoji, isNull);
   });
-
 }
