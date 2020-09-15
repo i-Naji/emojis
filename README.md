@@ -12,70 +12,15 @@ import 'package:emojis/emoji.dart'; // to use Emoji utilities
 1️⃣ Use
 ```dart
 print('I ${Emojis.greenHeart} ${Emojis.directHit}'); // I 💚 🎯
-
-Emoji smile = Emoji.byName('Grinning Face'); // get a emoji by its name
-print('Emoji name      : ${smile.name}');
-// Emoji name is Grinning Face
-print('Emoji character : ${smile.char}');
-// Emoji character '😀'
-print('Emoji category  : ${smile.emojiGroup}');
-// EmojiGroup.smileysEmotion group of emoji
-print('Emoji sub-group : ${smile.emojiSubgroup}');
-// EmojiSubgroup.faceSmiling sub group of emoji
-
-// get an emoji by its character 👱‍♀️
-Emoji womanBlond = Emoji.byChar(Emojis.womanBlondHair); 
-print(womanBlond);
-
-// make blondy in black
-Emoji blondyBlackLady = womanBlond.newSkin(fitzpatrick.dark); 
-print(blondyBlackLady); // 👱🏿‍♀️
-
-List<Emoji> emList = Emoji.all(); // list of all Emojis
-
-// disassemble an emoji
-List<String> disassembled = Emoji.disassemble(Emojis.mechanic); 
-print(disassembled); // ['🔧', '🧑']
-
-// assemble some emojis
-String assembled = Emoji.assemble([Emojis.man, Emojis.man, Emojis.girl, Emojis.boy]);
-print(assembled); // 👨‍👨‍👧‍👦️
-
-String blackThumbsUp = '👍';
-// modify skin tone of emoji
-String witheThumbsUp = Emoji.modify(blackThumbsUp, fitzpatrick.light); 
-print(witheThumbsUp); // 👍🏻
-
-// A Woman Police Officer With Brown Skin
-String femaleCop =  Emojis.womanPoliceOfficerMediumDarkSkinTone;
-// Make that woman to just a Woman Police Officer with no special skin color
-String newFemaleCop = Emoji.stabilize(femaleCop);
-print('$femaleCop => $newFemaleCop'); //👮🏾‍♀️ => 👮‍♀️ 
-
-// gender-neutral
-String aCop = Emoji.stabilize(femaleCop, skin: false, gender: true);
-print('$femaleCop => $aCop'); //👮🏾‍♀️=> 👮🏾 no gender! still medium dark
-
-final loveEmojis = Emoji.byKeyword('love'); // returns list of lovely emojis :)
-print(loveEmojis);
-// (🥰, 😍, 😘, 😚, 😙, 🤗, 😻, 😽, 💋, 💌, 💘, 💝, 💖, 💗, 💓, 💞, 💕, ..., 💄, ♾)
-
-final foodCategory =  Emoji.byGroup(EmojiGroup.foodDrink); // returns emojis in Food and Drink group
-print(foodCategory);
-// (🍇, 🍈, 🍉, 🍊, 🍋, 🍌, 🍍, 🥭, 🍎, 🍏, 🍐, 🍑, 🍒, 🍓, 🥝, 🍅, 🥥, 🥑, ...)
-
-eIterable<Emoji> moneySubgroupEmojis = Emoji.bySubgroup(EmojiSubgroup.money); // returns emojis in Money subgroup
-print(moneySubgroupEmojis);
-// (💰, 💴, 💵, 💶, 💷, 💸, 💳, 🧾, 💹)
 ```
 
 ## 🚀 Features
 - [x] All Present unicode emojis 💯
-- [x] Get Emojis by Name, Category, Keyword & ...
-- [x] Modify Emoji with 🆕 skin color ( 🏻 🏼 🏽 🏾 🏿 )
-- [x] Stabilize Emoji (No Skin color, No Gender)
-- [X] Assemble Emojis (👩 + ❤ + 👩  = 👩‍❤️‍👩 )
-- [x] Disassemble Emojis (👨‍🔧 = 🔧 + 🧑)
+- [ ] Get Emojis by Name, Category, Keyword & ...
+- [ ] Modify Emoji with 🆕 skin color ( 🏻 🏼 🏽 🏾 🏿 )
+- [ ] Stabilize Emoji (No Skin color, No Gender)
+- [ ] Assemble Emojis (👩 + ❤ + 👩  = 👩‍❤️‍👩 )
+- [ ] Disassemble Emojis (👨‍🔧 = 🔧 + 🧑)
 - [x] Emoji Regex Pattern
 - [ ] Emojize and Demojize text
 - [ ] Find emojis in text
