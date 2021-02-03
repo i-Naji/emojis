@@ -105,8 +105,8 @@ class Emoji {
   }
 
   /// Returns Emoji by [name] as short name.
-  factory Emoji.byShortName(String name){
-    return _emojis.firstWhere((Emoji emoji) => emoji.char == name, orElse: () => null);
+  factory Emoji.byShortName(String shortName){
+    return _emojis.firstWhere((Emoji emoji) => emoji.shortName == shortName, orElse: () => null);
   }
 
   /// Returns list of Emojis in a same [group]
