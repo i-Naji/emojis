@@ -4,22 +4,22 @@ import 'package:emojis/emoji.dart';
 main() {
   print('I ${Emojis.greenHeart} ${Emojis.directHit}'); // I 💚 🎯
 
-  Emoji smile = Emoji.byName('Grinning Face'); // get a emoji by its name
-  print('Emoji name      : ${smile.name}');
+  Emoji? smile = Emoji.byName('Grinning Face'); // get a emoji by its name
+  print('Emoji name      : ${smile?.name}');
   // Emoji name is Grinning Face
-  print('Emoji character : ${smile.char}');
+  print('Emoji character : ${smile?.char}');
   // Emoji character is '😀'
-  print('Emoji category  : ${smile.emojiGroup}');
+  print('Emoji category  : ${smile?.emojiGroup}');
   // EmojiGroup.smileysEmotion group of emoji
-  print('Emoji sub-group : ${smile.emojiSubgroup}');
+  print('Emoji sub-group : ${smile?.emojiSubgroup}');
   // EmojiSubgroup.faceSmiling sub group of emoji
 
   // get an emoji by its character 👱‍♀️
-  Emoji womanBlond = Emoji.byChar(Emojis.womanBlondHair);
+  Emoji? womanBlond = Emoji.byChar(Emojis.womanBlondHair);
   print(womanBlond);
 
   // make blondy in black
-  Emoji blondyBlackLady = womanBlond.newSkin(fitzpatrick.dark);
+  Emoji? blondyBlackLady = womanBlond?.newSkin(fitzpatrick.dark);
   print(blondyBlackLady); // 👱🏿‍♀️
 
   List<Emoji> emList = Emoji.all(); // list of all Emojis
