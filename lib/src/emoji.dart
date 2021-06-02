@@ -113797,14 +113797,14 @@ class Emoji {
   static const variationSelector16 = 65039;
   static const ZWJ = 8205;
 
-  final String name;
-  final String char;
-  final String shortName;
-  final EmojiGroup emojiGroup;
-  final EmojiSubgroup emojiSubgroup;
+  final String? name;
+  final String? char;
+  final String? shortName;
+  final EmojiGroup? emojiGroup;
+  final EmojiSubgroup? emojiSubgroup;
   final bool modifiable;
   final List<String> keywords;
-  List<int> _runes;
+  List<int>? _runes;
 
   /// Emoji class.
   /// [name] of emoji. [char] and character of emoji. [shortName] and a digest name of emoji, [emojiGroup] is emoji's group and [emojiSubgroup] is emoji's subgroup. [keywords] list of keywords for emoji. [modifiable] `true` if emoji has skin.
@@ -113819,54 +113819,54 @@ class Emoji {
 
   /// Runes of Emoji Character
   List<int> get charRunes {
-    return _runes ??= char.runes.toList();
+    return _runes ??= char!.runes.toList();
   }
 
   /// Returns current Emoji with New requested [skinTone] if modifiable, else Returns current Emoji
-  Emoji newSkin(fitzpatrick skinTone) {
+  Emoji? newSkin(fitzpatrick skinTone) {
     if (modifiable) {
       switch (skinTone) {
         case fitzpatrick.light:
           return Emoji(
-              name: this.name + ', tone1',
+              name: this.name! + ', tone1',
               char: modify(this.char, skinTone),
-              shortName: this.shortName + '_tone1',
+              shortName: this.shortName! + '_tone1',
               emojiGroup: this.emojiGroup,
               emojiSubgroup: this.emojiSubgroup,
               keywords: this.keywords,
               modifiable: true);
         case fitzpatrick.mediumLight:
           return Emoji(
-              name: this.name + ', tone2',
+              name: this.name! + ', tone2',
               char: modify(this.char, skinTone),
-              shortName: this.shortName + '_tone2',
+              shortName: this.shortName! + '_tone2',
               emojiGroup: this.emojiGroup,
               emojiSubgroup: this.emojiSubgroup,
               keywords: this.keywords,
               modifiable: true);
         case fitzpatrick.medium:
           return Emoji(
-              name: this.name + ', tone3',
+              name: this.name! + ', tone3',
               char: modify(this.char, skinTone),
-              shortName: this.shortName + '_tone3',
+              shortName: this.shortName! + '_tone3',
               emojiGroup: this.emojiGroup,
               emojiSubgroup: this.emojiSubgroup,
               keywords: this.keywords,
               modifiable: true);
         case fitzpatrick.mediumDark:
           return Emoji(
-              name: this.name + ', tone4',
+              name: this.name! + ', tone4',
               char: modify(this.char, skinTone),
-              shortName: this.shortName + '_tone4',
+              shortName: this.shortName! + '_tone4',
               emojiGroup: this.emojiGroup,
               emojiSubgroup: this.emojiSubgroup,
               keywords: this.keywords,
               modifiable: true);
         case fitzpatrick.dark:
           return Emoji(
-              name: this.name + ', tone5',
+              name: this.name! + ', tone5',
               char: modify(this.char, skinTone),
-              shortName: this.shortName + '_tone5',
+              shortName: this.shortName! + '_tone5',
               emojiGroup: this.emojiGroup,
               emojiSubgroup: this.emojiSubgroup,
               keywords: this.keywords,
@@ -113882,22 +113882,31 @@ class Emoji {
   static List<Emoji> all() => List.unmodifiable(_emojis);
 
   /// Returns Emoji by [char] and character
-  factory Emoji.byChar(String char) {
-    return _emojis.firstWhere((Emoji emoji) => emoji.char == char,
-        orElse: () => null);
+  static Emoji? byChar(String char) {
+    try {
+      return _emojis.firstWhere((Emoji emoji) => emoji.char == char);
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Returns Emoji by [name]
-  factory Emoji.byName(String name) {
+  static Emoji? byName(String name) {
     name = name.toLowerCase(); // todo: searchable name
-    return _emojis.firstWhere((Emoji emoji) => emoji.name == name,
-        orElse: () => null);
+    try {
+      return _emojis.firstWhere((Emoji emoji) => emoji.name == name);
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Returns Emoji by [name] as short name.
-  factory Emoji.byShortName(String name) {
-    return _emojis.firstWhere((Emoji emoji) => emoji.char == name,
-        orElse: () => null);
+  static Emoji? byShortName(String name) {
+    try {
+      return _emojis.firstWhere((Emoji emoji) => emoji.char == name);
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Returns list of Emojis in a same [group]
@@ -113942,8 +113951,8 @@ class Emoji {
   }
 
   /// Modify skin tone of [emoji] by requested [skinTone]
-  static String modify(String emoji, fitzpatrick skinTone) {
-    int skinToneCharCode;
+  static String modify(String? emoji, fitzpatrick skinTone) {
+    int? skinToneCharCode;
     switch (skinTone) {
       case fitzpatrick.light:
         skinToneCharCode = 127995;
@@ -113964,8 +113973,8 @@ class Emoji {
         return stabilize(emoji);
     }
 
-    final emojiRunes = emoji.runes.toList();
-    List<int> finalCharCodes = [];
+    final emojiRunes = emoji!.runes.toList();
+    List<int?> finalCharCodes = [];
     for (final charCode in emojiRunes) {
       if (!_isFitzpatrickCode(charCode)) {
         finalCharCodes.add(charCode);
@@ -113974,15 +113983,15 @@ class Emoji {
         }
       }
     }
-    return String.fromCharCodes(finalCharCodes);
+    return String.fromCharCodes(finalCharCodes as Iterable<int>);
   }
 
   // todo: support unspecified gender for "... holding hands", "kiss", "couple with heart" and "family".
   /// stabilize [skin] and [gender] of [emoji], if `true`.
-  static String stabilize(String emoji,
+  static String stabilize(String? emoji,
       {bool skin = true, bool gender = false}) {
     if (gender) {
-      emoji = emoji
+      emoji = emoji!
           .replaceAll(
               '\u{200D}\u{2642}\u{FE0F}', '') // remove ZWJ man from emoji
           .replaceAll(
@@ -113995,7 +114004,7 @@ class Emoji {
               '\u{1F475}', '\u{1F9D3}'); // replace old woman with old person
     }
 
-    final List<int> emojiRunes = emoji.runes.toList();
+    final List<int> emojiRunes = emoji!.runes.toList();
 
     if (skin) {
       emojiRunes.removeWhere((codeChar) => _isFitzpatrickCode(codeChar));
@@ -114019,5 +114028,5 @@ class Emoji {
   }
 
   @override
-  toString() => char;
+  toString() => char!;
 }
