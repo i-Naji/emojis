@@ -1,6 +1,6 @@
 name: emojis
 description: Emojis for Dart! This package contain all unicode 13.0 emojis (2020)!
-version: 0.9.0
+version: 0.9.1
 author: Naji <teamnaji@gmail.com>
 homepage:  https://github.com/i-Naji/emojis
 
