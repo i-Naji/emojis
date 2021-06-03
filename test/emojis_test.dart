@@ -9,10 +9,11 @@ void main() {
     expect(Emojis.directHit, equals(result));
   });
 
-  test("Regex pattern matches all emojis", (){
-    for (var emoji in Emoji.all()){
+  test("Regex pattern matches all emojis", () {
+    for (var emoji in Emoji.all()) {
       if (emoji.name == 'transgender symbol') continue;
-      expect(emojiRegex.allMatches(emoji.char).length, 1, reason: 'Bad reg match for ${emoji.name}');
+      expect(emojiRegex.allMatches(emoji.char!).length, 1,
+          reason: 'Bad reg match for ${emoji.name}');
     }
   });
 
@@ -22,5 +23,4 @@ void main() {
     final emoji = Emoji.byName('bla');
     expect(emoji, isNull);
   });
-
 }
