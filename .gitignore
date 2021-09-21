@@ -10,3 +10,6 @@ pubspec.lock
 
 generate/
 doc/
+gen/
+
+.claude/settings.local.json
