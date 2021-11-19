@@ -1,5 +1,11 @@
-## [0.9.1]
-* fix shadowing
+## [0.9.9]
+* Support null-safety
+* Update to [Unicode **v.13.1**](https://unicode.org/emoji/charts-13.1)
+* make `emoji` class const
+
+## [0.9.3]
+* Avoiding shadowing in Emoji `newSkin` method
+* Add analysis_options file
 
 ## [0.9.0]
 * Update to [Unicode **v.13**](https://unicode.org/emoji/charts-13.0)
@@ -10,7 +16,8 @@
 * Dropped `Emoji.isEmoji` method and `Emoji.regex` attr 
 
 ## [0.8.1]
-* Improve example 
+* Improve example
+
 ## [0.8.0]
 * Remove generator
 * Use last stable version unicode  12.1

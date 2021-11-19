@@ -1,3 +1,22 @@
+include: package:pedantic/analysis_options.yaml
+
+linter:
+  rules:
+    - always_declare_return_types
+    - camel_case_types
+    - empty_constructor_bodies
+    - annotate_overrides
+    - avoid_init_to_null
+    - one_member_abstracts
+    - slash_for_doc_comments
+    - unnecessary_brace_in_string_interps
+    - omit_local_variable_types
+
 analyzer:
   exclude:
     - generator/generate.dart
+  errors:
+    invalid_assignment: warning
+    missing_return: error
+    dead_code: info
+    todo: info

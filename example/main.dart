@@ -1,21 +1,25 @@
 import 'package:emojis/emojis.dart';
 import 'package:emojis/emoji.dart';
 
-main() {
-  print('I ${Emojis.greenHeart} ${Emojis.directHit}'); // I 💚 🎯
+void main() {
+  print('I ${Emojis.greenHeart} ${Emojis.bullseye}'); // I 💚 🎯
 
-  Emoji smile = Emoji.byName('Grinning Face'); // get a emoji by its name
-  print('Emoji name      : ${smile.name}');
-  // Emoji name is Grinning Face
-  print('Emoji character : ${smile.char}');
-  // Emoji character is '😀'
-  print('Emoji category  : ${smile.emojiGroup}');
-  // EmojiGroup.smileysEmotion group of emoji
-  print('Emoji sub-group : ${smile.emojiSubgroup}');
-  // EmojiSubgroup.faceSmiling sub group of emoji
-
+  Emoji? smile = Emoji.byName('hi'); // get a emoji by its name
+  if (smile != null) {
+    print('Emoji name      : ${smile.name}');
+    // Emoji name is Grinning Face
+    print('Emoji character : ${smile.char}');
+    // Emoji character is '😀'
+    print('Emoji category  : ${smile.emojiGroup}');
+    // EmojiGroup.smileysEmotion group of emoji
+    print('Emoji sub-group : ${smile.emojiSubgroup}');
+    // EmojiSubgroup.faceSmiling sub group of emoji
+  } else {
+    print('Emoji not found!');
+  }
+  
   // get an emoji by its character 👱‍♀️
-  Emoji womanBlond = Emoji.byChar(Emojis.womanBlondHair);
+  Emoji? womanBlond = Emoji.byChar(Emojis.womanBlondHair)!;
   print(womanBlond);
 
   // make blondy in black
@@ -23,6 +27,7 @@ main() {
   print(blondyBlackLady); // 👱🏿‍♀️
 
   List<Emoji> emList = Emoji.all(); // list of all Emojis
+  print(emList[2]); // second emoji in list
 
   // disassemble an emoji
   List<String> disassembled = Emoji.disassemble(Emojis.mechanic);
@@ -45,13 +50,13 @@ main() {
 
   // gender-neutral
   String aCop = Emoji.stabilize(femaleCop, skin: false, gender: true);
-  print('$femaleCop => $aCop'); //👮🏾‍♀️=> 👮🏾 no gender! still medium dark
+  print('$femaleCop => $aCop'); //👮🏾‍♀️=> 👮 no gender! still medium dark
 
   final loveEmojis = Emoji.byKeyword('love'); // returns list of lovely emojis :)
   print(loveEmojis);
   // (🥰, 😍, 😘, 😚, 😙, 🤗, 😻, 😽, 💋, 💌, 💘, 💝, 💖, 💗, 💓, 💞, 💕, ..., 💄, ♾)
 
-  final foodCategory =  Emoji.byGroup(EmojiGroup.foodDrink); // returns emojis in Food and Drink group
+  final foodCategory = Emoji.byGroup(EmojiGroup.foodDrink); // returns emojis in Food and Drink group
   print(foodCategory);
   // (🍇, 🍈, 🍉, 🍊, 🍋, 🍌, 🍍, 🥭, 🍎, 🍏, 🍐, 🍑, 🍒, 🍓, 🥝, 🍅, 🥥, 🥑, ...)
 
