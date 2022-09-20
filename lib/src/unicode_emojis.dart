@@ -48,6 +48,7 @@ class Emojis {
   static const grimacingFace = '\u{1F62C}';
   static const faceExhaling = '\u{1F62E}\u{200D}\u{1F4A8}';
   static const lyingFace = '\u{1F925}';
+  static const shakingFace = '\u{1FAE8}';
   static const relievedFace = '\u{1F60C}';
   static const pensiveFace = '\u{1F614}';
   static const sleepyFace = '\u{1F62A}';
@@ -98,7 +99,7 @@ class Emojis {
   static const tiredFace = '\u{1F62B}';
   static const yawningFace = '\u{1F971}';
   static const faceWithSteamFromNose = '\u{1F624}';
-  static const poutingFace = '\u{1F621}';
+  static const enragedFace = '\u{1F621}';
   static const angryFace = '\u{1F620}';
   static const faceWithSymbolsOnMouth = '\u{1F92C}';
   static const smilingFaceWithHorns = '\u{1F608}';
@@ -125,7 +126,6 @@ class Emojis {
   static const seeNoEvilMonkey = '\u{1F648}';
   static const hearNoEvilMonkey = '\u{1F649}';
   static const speakNoEvilMonkey = '\u{1F64A}';
-  static const kissMark = '\u{1F48B}';
   static const loveLetter = '\u{1F48C}';
   static const heartWithArrow = '\u{1F498}';
   static const heartWithRibbon = '\u{1F49D}';
@@ -140,14 +140,18 @@ class Emojis {
   static const heartOnFire = '\u{2764}\u{FE0F}\u{200D}\u{1F525}';
   static const mendingHeart = '\u{2764}\u{FE0F}\u{200D}\u{1FA79}';
   static const redHeart = '\u{2764}\u{FE0F}';
+  static const pinkHeart = '\u{1FA77}';
   static const orangeHeart = '\u{1F9E1}';
   static const yellowHeart = '\u{1F49B}';
   static const greenHeart = '\u{1F49A}';
   static const blueHeart = '\u{1F499}';
+  static const lightBlueHeart = '\u{1FA75}';
   static const purpleHeart = '\u{1F49C}';
   static const brownHeart = '\u{1F90E}';
   static const blackHeart = '\u{1F5A4}';
+  static const greyHeart = '\u{1FA76}';
   static const whiteHeart = '\u{1F90D}';
+  static const kissMark = '\u{1F48B}';
   static const hundredPoints = '\u{1F4AF}';
   static const angerSymbol = '\u{1F4A2}';
   static const collision = '\u{1F4A5}';
@@ -155,7 +159,6 @@ class Emojis {
   static const sweatDroplets = '\u{1F4A6}';
   static const dashingAway = '\u{1F4A8}';
   static const hole = '\u{1F573}\u{FE0F}';
-  static const bomb = '\u{1F4A3}';
   static const speechBalloon = '\u{1F4AC}';
   static const eyeInSpeechBubble = '\u{1F441}\u{FE0F}\u{200D}\u{1F5E8}\u{FE0F}';
   static const leftSpeechBubble = '\u{1F5E8}\u{FE0F}';
@@ -216,6 +219,18 @@ class Emojis {
   static const palmUpHandMediumSkinTone = '\u{1FAF4}\u{1F3FD}';
   static const palmUpHandMediumDarkSkinTone = '\u{1FAF4}\u{1F3FE}';
   static const palmUpHandDarkSkinTone = '\u{1FAF4}\u{1F3FF}';
+  static const leftwardsPushingHand = '\u{1FAF7}';
+  static const leftwardsPushingHandLightSkinTone = '\u{1FAF7}\u{1F3FB}';
+  static const leftwardsPushingHandMediumLightSkinTone = '\u{1FAF7}\u{1F3FC}';
+  static const leftwardsPushingHandMediumSkinTone = '\u{1FAF7}\u{1F3FD}';
+  static const leftwardsPushingHandMediumDarkSkinTone = '\u{1FAF7}\u{1F3FE}';
+  static const leftwardsPushingHandDarkSkinTone = '\u{1FAF7}\u{1F3FF}';
+  static const rightwardsPushingHand = '\u{1FAF8}';
+  static const rightwardsPushingHandLightSkinTone = '\u{1FAF8}\u{1F3FB}';
+  static const rightwardsPushingHandMediumLightSkinTone = '\u{1FAF8}\u{1F3FC}';
+  static const rightwardsPushingHandMediumSkinTone = '\u{1FAF8}\u{1F3FD}';
+  static const rightwardsPushingHandMediumDarkSkinTone = '\u{1FAF8}\u{1F3FE}';
+  static const rightwardsPushingHandDarkSkinTone = '\u{1FAF8}\u{1F3FF}';
   static const okHand = '\u{1F44C}';
   static const okHandLightSkinTone = '\u{1F44C}\u{1F3FB}';
   static const okHandMediumLightSkinTone = '\u{1F44C}\u{1F3FC}';
@@ -2327,6 +2342,8 @@ class Emojis {
   static const tiger = '\u{1F405}';
   static const leopard = '\u{1F406}';
   static const horseFace = '\u{1F434}';
+  static const moose = '\u{1FACE}';
+  static const donkey = '\u{1FACF}';
   static const horse = '\u{1F40E}';
   static const unicorn = '\u{1F984}';
   static const zebra = '\u{1F993}';
@@ -2389,6 +2406,9 @@ class Emojis {
   static const flamingo = '\u{1F9A9}';
   static const peacock = '\u{1F99A}';
   static const parrot = '\u{1F99C}';
+  static const wing = '\u{1FABD}';
+  static const blackBird = '\u{1F426}\u{200D}\u{2B1B}';
+  static const goose = '\u{1FABF}';
   static const frog = '\u{1F438}';
   static const crocodile = '\u{1F40A}';
   static const turtle = '\u{1F422}';
@@ -2409,6 +2429,7 @@ class Emojis {
   static const octopus = '\u{1F419}';
   static const spiralShell = '\u{1F41A}';
   static const coral = '\u{1FAB8}';
+  static const jellyfish = '\u{1FABC}';
   static const snail = '\u{1F40C}';
   static const butterfly = '\u{1F98B}';
   static const bug = '\u{1F41B}';
@@ -2436,6 +2457,7 @@ class Emojis {
   static const sunflower = '\u{1F33B}';
   static const blossom = '\u{1F33C}';
   static const tulip = '\u{1F337}';
+  static const hyacinth = '\u{1FABB}';
   static const seedling = '\u{1F331}';
   static const pottedPlant = '\u{1FAB4}';
   static const evergreenTree = '\u{1F332}';
@@ -2451,6 +2473,7 @@ class Emojis {
   static const leafFlutteringInWind = '\u{1F343}';
   static const emptyNest = '\u{1FAB9}';
   static const nestWithEggs = '\u{1FABA}';
+  static const mushroom = '\u{1F344}';
   static const grapes = '\u{1F347}';
   static const melon = '\u{1F348}';
   static const watermelon = '\u{1F349}';
@@ -2482,10 +2505,11 @@ class Emojis {
   static const broccoli = '\u{1F966}';
   static const garlic = '\u{1F9C4}';
   static const onion = '\u{1F9C5}';
-  static const mushroom = '\u{1F344}';
   static const peanuts = '\u{1F95C}';
   static const beans = '\u{1FAD8}';
   static const chestnut = '\u{1F330}';
+  static const gingerRoot = '\u{1FADA}';
+  static const peaPod = '\u{1FADB}';
   static const bread = '\u{1F35E}';
   static const croissant = '\u{1F950}';
   static const baguetteBread = '\u{1F956}';
@@ -2858,11 +2882,10 @@ class Emojis {
   static const bullseye = '\u{1F3AF}';
   static const yoYo = '\u{1FA80}';
   static const kite = '\u{1FA81}';
+  static const waterPistol = '\u{1F52B}';
   static const pool8Ball = '\u{1F3B1}';
   static const crystalBall = '\u{1F52E}';
   static const magicWand = '\u{1FA84}';
-  static const nazarAmulet = '\u{1F9FF}';
-  static const hamsa = '\u{1FAAC}';
   static const videoGame = '\u{1F3AE}';
   static const joystick = '\u{1F579}\u{FE0F}';
   static const slotMachine = '\u{1F3B0}';
@@ -2907,6 +2930,7 @@ class Emojis {
   static const shorts = '\u{1FA73}';
   static const bikini = '\u{1F459}';
   static const womanSClothes = '\u{1F45A}';
+  static const foldingHandFan = '\u{1FAAD}';
   static const purse = '\u{1F45B}';
   static const handbag = '\u{1F45C}';
   static const clutchBag = '\u{1F45D}';
@@ -2921,6 +2945,7 @@ class Emojis {
   static const womanSSandal = '\u{1F461}';
   static const balletShoes = '\u{1FA70}';
   static const womanSBoot = '\u{1F462}';
+  static const hairPick = '\u{1FAAE}';
   static const crown = '\u{1F451}';
   static const womanSHat = '\u{1F452}';
   static const topHat = '\u{1F3A9}';
@@ -2959,6 +2984,8 @@ class Emojis {
   static const banjo = '\u{1FA95}';
   static const drum = '\u{1F941}';
   static const longDrum = '\u{1FA98}';
+  static const maracas = '\u{1FA87}';
+  static const flute = '\u{1FA88}';
   static const mobilePhone = '\u{1F4F1}';
   static const mobilePhoneWithArrow = '\u{1F4F2}';
   static const telephone = '\u{260E}\u{FE0F}';
@@ -3078,7 +3105,7 @@ class Emojis {
   static const hammerAndWrench = '\u{1F6E0}\u{FE0F}';
   static const dagger = '\u{1F5E1}\u{FE0F}';
   static const crossedSwords = '\u{2694}\u{FE0F}';
-  static const waterPistol = '\u{1F52B}';
+  static const bomb = '\u{1F4A3}';
   static const boomerang = '\u{1FA83}';
   static const bowAndArrow = '\u{1F3F9}';
   static const shield = '\u{1F6E1}\u{FE0F}';
@@ -3139,6 +3166,8 @@ class Emojis {
   static const coffin = '\u{26B0}\u{FE0F}';
   static const headstone = '\u{1FAA6}';
   static const funeralUrn = '\u{26B1}\u{FE0F}';
+  static const nazarAmulet = '\u{1F9FF}';
+  static const hamsa = '\u{1FAAC}';
   static const moai = '\u{1F5FF}';
   static const placard = '\u{1FAA7}';
   static const identificationCard = '\u{1FAAA}';
@@ -3201,6 +3230,7 @@ class Emojis {
   static const peaceSymbol = '\u{262E}\u{FE0F}';
   static const menorah = '\u{1F54E}';
   static const dottedSixPointedStar = '\u{1F52F}';
+  static const khanda = '\u{1FAAF}';
   static const aries = '\u{2648}';
   static const taurus = '\u{2649}';
   static const gemini = '\u{264A}';
@@ -3236,6 +3266,7 @@ class Emojis {
   static const dimButton = '\u{1F505}';
   static const brightButton = '\u{1F506}';
   static const antennaBars = '\u{1F4F6}';
+  static const wireless = '\u{1F6DC}';
   static const vibrationMode = '\u{1F4F3}';
   static const mobilePhoneOff = '\u{1F4F4}';
   static const femaleSign = '\u{2640}\u{FE0F}';

@@ -1,3 +1,7 @@
+## [1.1.0]
+* Update to [Unicode **v.15.0**](https://unicode.org/emoji/charts-15.0)
+* Added 🫨 🩷 🩵 🩶 🫷 🫸 🫎 🫏 🪽 🐦‍⬛ 🪿 🪼 🪻 🫚 🫛 🪭 🪮 🪇 🪈 🪯 🛜
+
 ## [1.0.0]
 * Update to [Unicode **v.14.0**](https://unicode.org/emoji/charts-14.0)
 * Added 🫠 🫢 🫣 🫡 🫥 🫤 🥹 🫱 🫲 🫳 🫴 🫰 🫵 🫶 🫦 🫅 🫃 🫄 🧌 🪸 🪷 🪹 🪺 🫘 🫗 🫙 🛝 🛞 🛟 🪬 🪩 🪫 🩼 🩻 🫧 🪪 ♀️ ♂️ 🟰 ⚕️
