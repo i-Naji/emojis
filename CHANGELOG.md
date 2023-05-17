@@ -1,3 +1,7 @@
+## [3.0.0]
+* Require Dart 3
+* Fix null-safety in `Emoji.newSkin`
+
 ## [1.1.0]
 * Update to [Unicode **v.15.0**](https://unicode.org/emoji/charts-15.0)
 * Added 🫨 🩷 🩵 🩶 🫷 🫸 🫎 🫏 🪽 🐦‍⬛ 🪿 🪼 🪻 🫚 🫛 🪭 🪮 🪇 🪈 🪯 🛜

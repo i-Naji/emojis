@@ -75,7 +75,7 @@ class Emoji {
         case fitzpatrick.dark:
           return Emoji(name: name + ', tone5', char: modify(char, skinTone), shortName: shortName + '_tone5',emojiGroup: emojiGroup, emojiSubgroup: emojiSubgroup, keywords: keywords, modifiable: true);
         case fitzpatrick.None:
-          return Emoji.byChar(stabilize(char))!;
+          return Emoji.byChar(stabilize(char)) ?? this;
       }
     }
     return this;
