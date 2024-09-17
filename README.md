@@ -1,7 +1,7 @@
 # Emojis 
 
 🔥 Emoji for Dart 🔥 Over 3300 Emojis <br> 
-This 📦 contain all 🆕 [Unicode 15.1 Emojis](https://unicode.org/emoji/charts) (2️⃣0️⃣2️⃣3️⃣)
+This 📦 contain all 🆕 [Unicode 16.0 Emojis](https://unicode.org/emoji/charts) (2️⃣0️⃣2️⃣4️⃣)
 `💪  supports null safety 💪`
 ## 🛠️ Usage
 0️⃣ Import

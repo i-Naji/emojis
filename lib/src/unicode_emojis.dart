@@ -56,6 +56,7 @@ class Emojis {
   static const sleepyFace = '\u{1F62A}';
   static const droolingFace = '\u{1F924}';
   static const sleepingFace = '\u{1F634}';
+  static const faceWithBagsUnderEyes = '\u{1FAE9}';
   static const faceWithMedicalMask = '\u{1F637}';
   static const faceWithThermometer = '\u{1F912}';
   static const faceWithHeadBandage = '\u{1F915}';
@@ -2427,6 +2428,7 @@ class Emojis {
   static const familyAdultChild = '\u{1F9D1}\u{200D}\u{1F9D2}';
   static const familyAdultChildChild = '\u{1F9D1}\u{200D}\u{1F9D2}\u{200D}\u{1F9D2}';
   static const footprints = '\u{1F463}';
+  static const fingerprint = '\u{1FAC6}';
   static const lightSkinTone = '\u{1F3FB}';
   static const mediumLightSkinTone = '\u{1F3FC}';
   static const mediumSkinTone = '\u{1F3FD}';
@@ -2545,6 +2547,11 @@ class Emojis {
   static const spiralShell = '\u{1F41A}';
   static const coral = '\u{1FAB8}';
   static const jellyfish = '\u{1FABC}';
+  static const crab = '\u{1F980}';
+  static const lobster = '\u{1F99E}';
+  static const shrimp = '\u{1F990}';
+  static const squid = '\u{1F991}';
+  static const oyster = '\u{1F9AA}';
   static const snail = '\u{1F40C}';
   static const butterfly = '\u{1F98B}';
   static const bug = '\u{1F41B}';
@@ -2589,6 +2596,7 @@ class Emojis {
   static const emptyNest = '\u{1FAB9}';
   static const nestWithEggs = '\u{1FABA}';
   static const mushroom = '\u{1F344}';
+  static const leaflessTree = '\u{1FABE}';
   static const grapes = '\u{1F347}';
   static const melon = '\u{1F348}';
   static const watermelon = '\u{1F349}';
@@ -2627,6 +2635,7 @@ class Emojis {
   static const gingerRoot = '\u{1FADA}';
   static const peaPod = '\u{1FADB}';
   static const brownMushroom = '\u{1F344}\u{200D}\u{1F7EB}';
+  static const rootVegetable = '\u{1FADC}';
   static const bread = '\u{1F35E}';
   static const croissant = '\u{1F950}';
   static const baguetteBread = '\u{1F956}';
@@ -2678,11 +2687,6 @@ class Emojis {
   static const dumpling = '\u{1F95F}';
   static const fortuneCookie = '\u{1F960}';
   static const takeoutBox = '\u{1F961}';
-  static const crab = '\u{1F980}';
-  static const lobster = '\u{1F99E}';
-  static const shrimp = '\u{1F990}';
-  static const squid = '\u{1F991}';
-  static const oyster = '\u{1F9AA}';
   static const softIceCream = '\u{1F366}';
   static const shavedIce = '\u{1F367}';
   static const iceCream = '\u{1F368}';
@@ -3103,6 +3107,7 @@ class Emojis {
   static const longDrum = '\u{1FA98}';
   static const maracas = '\u{1FA87}';
   static const flute = '\u{1FA88}';
+  static const harp = '\u{1FA89}';
   static const mobilePhone = '\u{1F4F1}';
   static const mobilePhoneWithArrow = '\u{1F4F2}';
   static const telephone = '\u{260E}\u{FE0F}';
@@ -3241,6 +3246,7 @@ class Emojis {
   static const toolbox = '\u{1F9F0}';
   static const magnet = '\u{1F9F2}';
   static const ladder = '\u{1FA9C}';
+  static const shovel = '\u{1FA8F}';
   static const alembic = '\u{2697}\u{FE0F}';
   static const testTube = '\u{1F9EA}';
   static const petriDish = '\u{1F9EB}';
@@ -3426,6 +3432,7 @@ class Emojis {
   static const copyright = '\u{00A9}\u{FE0F}';
   static const registered = '\u{00AE}\u{FE0F}';
   static const tradeMark = '\u{2122}\u{FE0F}';
+  static const splatter = '\u{1FADF}';
   static const hashtag = '\u{0023}\u{FE0F}\u{20E3}';
   static const keycapStar = '\u{002A}\u{FE0F}\u{20E3}';
   static const keycap0 = '\u{0030}\u{FE0F}\u{20E3}';
@@ -3571,6 +3578,7 @@ class Emojis {
   static const flagChina = '\u{1F1E8}\u{1F1F3}';
   static const flagColombia = '\u{1F1E8}\u{1F1F4}';
   static const flagClippertonIsland = '\u{1F1E8}\u{1F1F5}';
+  static const flagSark = '\u{1F1E8}\u{1F1F6}';
   static const flagCostaRica = '\u{1F1E8}\u{1F1F7}';
   static const flagCuba = '\u{1F1E8}\u{1F1FA}';
   static const flagCapeVerde = '\u{1F1E8}\u{1F1FB}';

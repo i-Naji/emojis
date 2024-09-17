@@ -1,6 +1,6 @@
 name: emojis
-description: Emojis for Dart! This package contain all unicode 15.1 emojis (2023)!
-version: 3.0.1
+description: Emojis for Dart! This package contain all unicode 16.0 emojis (2024)!
+version: 3.1.0
 homepage:  https://github.com/i-Naji/emojis
 
 environment:
